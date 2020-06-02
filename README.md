@@ -82,3 +82,4 @@
     * 디퍼런스(difference) : 차집합
     * 익스클루시브(exclusive) : 대칭 차집합
     * 서브셋(subset) : 부분집합
+    * 슈퍼셋(superset) : 진부분집합
