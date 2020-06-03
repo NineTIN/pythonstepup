@@ -83,3 +83,18 @@
     * 익스클루시브(exclusive) : 대칭 차집합
     * 서브셋(subset) : 부분집합
     * 슈퍼셋(superset) : 진부분집합
+
+# 파이썬의 코드 구조
+#### 9.py
+* if , elif,  else
+* while
+* while & break & continue
+* break 확인하기
+* for
+* 여러 시퀀스 이터레이터(iterator)하기: zip()
+* zip()응용 - 리스트
+* zip()응용 - 딕셔너리
+* 숫자 시퀀스 생성: range()
+
+# 파이썬의 함수
+#### 10.py
