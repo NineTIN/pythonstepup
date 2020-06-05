@@ -71,3 +71,48 @@ edit_story(stairs, lambda word: word.capitalize() + '!')
 # Thud!
 # Hiss! 
 #----------------------
+
+# 데코레이터
+'''
+소스 코드의 변경 없이 사용하고 있는 함수를 수정 하고 싶을때 사용
+하나의 함수를 취해서 또 다른 함수를 반환 하는 함수이다.
+필요한 것은
+*args (위치인자 모으기)
+**keyword_args (키워드 인자 모으기)
+내부 함수
+함수 인자
+'''
+def document_it(func):
+    def new_func(* args,**kwargs):
+        print('Running Function:',func.__name__)
+        print('Positional arguments:',args)
+        print('keyword arguments:',kwargs)
+        result = func(*args, **kwargs)
+        return result
+    return new_func
+
+def add_ints(a,b):
+    return a + b
+
+coller_add_ints = document_it(add_ints) # 데커레이터를 수동으로 할당
+print(coller_add_ints(3,5))
+# 결과 : 
+# Running Function: add_ints
+# Positional arguments: (3, 5)
+# keyword arguments: {}
+# 8
+
+# 데코레이터 어노테이션
+'''
+수동으로 할당하는 방법 말고 어노테이션을 써서 할당 할 수도 있다.
+'''
+@document_it
+def add_ints2(a,b):
+    return a + b
+
+print(add_ints2(3,5))
+# 결과 : 
+# Running Function: add_ints2
+# Positional arguments: (3, 5)
+# keyword arguments: {}
+# 8
